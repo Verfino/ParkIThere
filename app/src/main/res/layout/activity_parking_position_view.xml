@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginActivity"
+    android:background="@drawable/alert_bump">
+    <!--
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    -->
+
+    <ImageView
+        android:id="@+id/parking_icon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@mipmap/garage_icon"
+        >
+
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/parking_name"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        style="@style/normalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parking_icon">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/parking_address"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        style="@style/normalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parking_name">
+
+    </TextView>
+    <TextView
+        android:id="@+id/parking_contact"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        style="@style/normalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/parking_address">
+
+    </TextView>
+
+
+
+    <Button
+        android:id="@+id/button_accept_login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="64dp"
+        android:enabled="true"
+
+        style="@style/normalButton"
+        android:text="@string/menu_park"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parking_contact"
+        app:layout_constraintVertical_bias="0.2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

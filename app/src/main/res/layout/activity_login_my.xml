@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginActivity"
+    tools:context=".loginActivity"
     android:background="@drawable/alert_bump">
     <!--
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -63,7 +63,7 @@
         android:layout_marginEnd="24dp"
 
 
-        style="@style/label"
+         style="@style/label"
         android:textColorHint="@color/colorAccent"
         android:background="@drawable/border"
 
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/button_accept_login"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -86,7 +86,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="64dp"
-        android:enabled="false"
+        android:enabled="true"
 
         style="@style/normalButton"
         android:text="@string/action_sign_in"

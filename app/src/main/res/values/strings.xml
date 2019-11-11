@@ -16,24 +16,38 @@
     <string name="menu_premium">Aktywuj wersję premium</string>
     <string name="menu_back">Powrót</string>
     <string name="menu_park">Parkuj</string>
+    <string name="menu_vehicle">Pojazdy</string>
+    <string name="menu_parkings">Parkingi</string>
+
 
     <string name="menu_name">Nazwa</string>
     <string name="menu_km">km</string>
     <string name="menu_spots">Powrót</string>
 
 
-    <string name="person_name">Znajdź parking</string>
-    <string name="person_surname">Znajdź parking</string>
-    <string name="person_email">Znajdź parking</string>
-    <string name="person_phone">Znajdź parking</string>
+    <string name="settings_label_change_pass">Zmiana hasła</string>
+    <string name="settings_label_newpass">Nowe hasło</string>
+    <string name="settings_label_againpass">Powtórz hasło</string>
+
+    <string name="person_name">Imię</string>
+    <string name="person_surname">Nazwisko</string>
+    <string name="person_email">e-mail</string>
+    <string name="person_phone">Telefon</string>
 
     <string name="vehicle_brand">Marka</string>
     <string name="vehicle_model">Model</string>
     <string name="vehicle_reg_num">Numer rej.</string>
     <string name="vehicle_fuel">Paliwo</string>
 
-    <string name="about_author">Oskar Kowalik</string>
+    <string name="about_author">Autor</string>
+    <string name="about_author_name">Oskar Kowalik</string>
     <string name="about_contact">Kontakt</string>
+    <string name="about_contact_details">235349@student.pwr.edu.pl</string>
+
+    <string name="search_parking">Znajdź\nparking</string>
+    <string name="manage_cars">Zarządzaj\npojazdami</string>
+    <string name="activate_premium">Aktywuj\npremium</string>
+
 
     <string name="title_activity_login">Logowanie</string>
     <string name="prompt_email">Email</string>

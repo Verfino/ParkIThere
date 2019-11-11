@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".loginActivity"
+    android:background="@drawable/alert_bump">
+    <!--
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    -->
+
+//TODO Etykiety zamienić kolor tła z kolorem tekstu
+    <TextView
+        android:id="@+id/about_background"
+        android:gravity="right"
+        android:paddingEnd="10dp"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+
+        style="@style/normalButton"
+        android:textSize="38dp"
+        >
+
+    </TextView>
+
+
+
+    <ImageView
+        android:id="@+id/author_photo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+
+
+
+
+        app:layout_constraintStart_toStartOf="@id/about_background"
+        app:layout_constraintEnd_toEndOf="@id/about_background"
+        app:layout_constraintTop_toTopOf="@id/about_background"
+        android:background="@mipmap/author_photo"
+
+        >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/author_label"
+        android:gravity="center_horizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/author_photo"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+
+
+        style="@style/invertedButton"
+        android:text="@string/about_author"
+        android:textSize="38dp"
+        >
+
+    </TextView>
+    <TextView
+    android:id="@+id/author_name_label"
+    android:gravity="center_horizontal"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+
+    app:layout_constraintTop_toBottomOf="@id/author_label"
+    android:layout_marginTop="10dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+
+    style="@style/greyButton"
+    android:text="@string/about_author_name"
+    android:textSize="55dp"
+    >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/contact_label"
+        android:gravity="center_horizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/author_name_label"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+
+        style="@style/invertedButton"
+        android:text="@string/about_contact"
+        android:textSize="38dp"
+        >
+    </TextView>
+    <TextView
+        android:id="@+id/contact_detail_label"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/contact_label"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+
+        style="@style/greyButton"
+        android:text="@string/about_contact_details"
+        android:textSize="30dp"
+        >
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import OskarKowalik.pracaINZ.ui.login.LoginActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button button_login;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void openActivityLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(this, loginActivity.class);
         startActivity(intent);
     }
 }

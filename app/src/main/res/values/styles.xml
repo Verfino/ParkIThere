@@ -15,6 +15,20 @@
 
     </style>
 
+    <style name="invertedButton" >
+    <item name="android:textColor">@color/colorButtonBackground</item>
+    <item name="android:background">@drawable/inverted_button</item>
+    <item name="android:textSize">20dp</item>
+
+    </style>
+
+    <style name="greyButton" >
+        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:background">@drawable/grey_button</item>
+        <item name="android:textSize">20dp</item>
+
+    </style>
+
     <style name="label" >
         <item name="android:textColor">@color/colorFont</item>
         <item name="android:background">@color/colorButtonBackground</item>
