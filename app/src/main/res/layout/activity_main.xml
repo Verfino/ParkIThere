@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
 
         android:layout_centerInParent="true"
-        android:rotation="-32"
+        android:rotation="-29"
 
         android:fontFamily="@font/blackops"
         android:text="@string/app_logo"

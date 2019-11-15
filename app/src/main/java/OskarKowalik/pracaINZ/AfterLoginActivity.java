@@ -61,7 +61,7 @@ public class AfterLoginActivity extends AppCompatActivity {
     }
 
     public void openBuyPremiumActivity() {
-        Toast.makeText(AfterLoginActivity.this, "Kliknięto premium textview",
+        Toast.makeText(AfterLoginActivity.this, "Moduł obecnie niedostępny",
                 Toast.LENGTH_LONG).show();
     }
 }
