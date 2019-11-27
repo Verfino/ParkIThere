@@ -8,16 +8,21 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.StringJoiner;
+
 public class AfterLoginActivity extends AppCompatActivity {
 
     private TextView textViewSearch;
     private TextView textViewCars;
     private TextView textViewPremium;
+    public String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_login);
+        Intent intent = getIntent();
+        userID = intent.getStringExtra("userID");
 
         textViewSearch = (TextView) findViewById(R.id.search_parking);
         textViewCars = (TextView) findViewById(R.id.manage_cars);
@@ -47,16 +52,15 @@ public class AfterLoginActivity extends AppCompatActivity {
 
 
     public void openParkingListActivity() {
-        Toast.makeText(AfterLoginActivity.this, "Kliknięto search textview",
-                Toast.LENGTH_LONG).show();
+
         Intent intent = new Intent(this, ParkingListActivity.class);
+        intent.putExtra("userID", userID);
         startActivity(intent);
 
     }
     public void  openManageCarsActivity() {
-        Toast.makeText(AfterLoginActivity.this, "Kliknięto manage cars textview",
-                Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, VehicleListActivity.class);
+        intent.putExtra("userID", userID);
         startActivity(intent);
     }
 

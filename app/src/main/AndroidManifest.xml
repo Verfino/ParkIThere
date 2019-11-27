@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParkingPositionViewActivity"></activity>
+        <activity android:name=".ParkingLotViewActivity"></activity>
+        <activity android:name=".RegisterLoginActivity" />
+        <activity android:name=".ParkingPositionViewActivity" />
         <activity android:name=".activity_parking_list" />
         <activity android:name=".ParkingListActivity" />
         <activity android:name=".activity_vehicle_listview" />

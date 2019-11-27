@@ -37,6 +37,7 @@ public class loginActivity extends AppCompatActivity {
     private String api_password;
     //private RequestQueue requestQueue = Volley.newRequestQueue(mContext);
     private RequestQueue requestQueue;
+    String userID = "0";
 
     EditText email_et;
     EditText password_et;
@@ -74,10 +75,9 @@ public class loginActivity extends AppCompatActivity {
         });
     }
     public void openActivityAfterLogin() {
-        Toast.makeText(loginActivity.this, "Welcome!",
-                Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, AfterLoginActivity.class);
+        intent.putExtra("userID", userID);
         startActivity(intent);
     }
 
@@ -94,6 +94,7 @@ public class loginActivity extends AppCompatActivity {
                             JSONObject user = response.getJSONObject(0);
                             api_password = user.getString("password");
                             name = user.getString("firstName");
+                            userID = user.getString("userID");
                             //Toast.makeText(loginActivity.this, "json " + api_password,
                             // Toast.LENGTH_LONG).show();
                             if(checkLoginData()) {
@@ -110,7 +111,7 @@ public class loginActivity extends AppCompatActivity {
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("Rest Response", error.toString());
+                        Log.e("Rest Response error", error.toString());
 
                     }
                 }
@@ -129,7 +130,7 @@ public class loginActivity extends AppCompatActivity {
             return true;
         else
         {
-            Toast.makeText(loginActivity.this, "Wprowadzono nieprawidłowe dane logowania\n password = " + password + "\napi_password = " + api_password,
+            Toast.makeText(loginActivity.this, "Wprowadzono nieprawidłowe dane logowania. Sprawdź email oraz hasło ",
                     Toast.LENGTH_LONG).show();
             return false;
         }

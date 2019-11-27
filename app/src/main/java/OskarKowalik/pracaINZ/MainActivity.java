@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button_login.setOnClickListener((new View.OnClickListener() {
+        button_register.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivityRegister();
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void openActivityRegister() {
-        Intent intent = new Intent(this, loginActivity.class);
+        Intent intent = new Intent(this, RegisterLoginActivity.class);
         startActivity(intent);
     }
 }
