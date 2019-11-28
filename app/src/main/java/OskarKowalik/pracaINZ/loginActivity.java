@@ -38,6 +38,7 @@ public class loginActivity extends AppCompatActivity {
     //private RequestQueue requestQueue = Volley.newRequestQueue(mContext);
     private RequestQueue requestQueue;
     String userID = "0";
+    String userType;
 
     EditText email_et;
     EditText password_et;
@@ -78,6 +79,7 @@ public class loginActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, AfterLoginActivity.class);
         intent.putExtra("userID", userID);
+        intent.putExtra("userType", userType);
         startActivity(intent);
     }
 
@@ -95,6 +97,7 @@ public class loginActivity extends AppCompatActivity {
                             api_password = user.getString("password");
                             name = user.getString("firstName");
                             userID = user.getString("userID");
+                            userType = user.getString("userType");
                             //Toast.makeText(loginActivity.this, "json " + api_password,
                             // Toast.LENGTH_LONG).show();
                             if(checkLoginData()) {

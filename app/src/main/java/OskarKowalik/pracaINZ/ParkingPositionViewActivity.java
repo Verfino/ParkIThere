@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -44,6 +45,10 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
 
     Button parkIT;
+    Button navigate;
+
+    String latitude;
+    String longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,7 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
         pName = findViewById(R.id.parking_name);
         pAddress = findViewById(R.id.parking_address);
         pContact = findViewById(R.id.parking_contact);
+        navigate = findViewById(R.id.button_navigate);
         //pContact.setMovementMethod(LinkMovementMethod.getInstance());
 
         mainURL = baseURL + parkingID;
@@ -69,8 +75,16 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ParkingPositionViewActivity.this, ParkingLotViewActivity.class);
                 startActivity(intent);
-                Toast.makeText(ParkingPositionViewActivity.this, "Parkuj !",
-                 Toast.LENGTH_LONG).show();
+                //Toast.makeText(ParkingPositionViewActivity.this, "Parkuj !",Toast.LENGTH_LONG).show();
+            }
+        });
+        navigate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                String uri = "geo:" + latitude + "," + longitude;
+                intent.setData(Uri.parse(uri));
+                startActivity(intent);
             }
         });
     }
@@ -90,6 +104,8 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
                             pName.setText(parking.getString("name"));
                             pAddress.setText(parking.getString("city"));
                             pContact.setText(parking.getString("site") + "\nWolne miejsca: " + parking.getString("freeSpots"));
+                            latitude = parking.getString("latitude");
+                            longitude = parking.getString("longitude");
 
                         }
                         catch (JSONException e) {

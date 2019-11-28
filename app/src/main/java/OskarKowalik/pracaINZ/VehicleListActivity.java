@@ -57,6 +57,7 @@ public class VehicleListActivity extends AppCompatActivity {
     String selectedItem = "0";
     String userID = null;
     String vehicleID = "brak";
+    String regNum;
 
     String decision;
     @Override
@@ -84,6 +85,7 @@ public class VehicleListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //selectedItem = position;
                 selectedItem = vehicles.get(position).get("ID");
+                regNum= vehicles.get(position).get("Second");
                 vehicleID = selectedItem;
                 //Toast.makeText(VehicleListActivity.this, "Position: " + position + " id :" + selectedItem, Toast.LENGTH_LONG).show();
             }
@@ -97,6 +99,7 @@ public class VehicleListActivity extends AppCompatActivity {
                 decision = "add";
                 Intent intent = new Intent(VehicleListActivity.this, CarSettingsActivity.class);
                 intent.putExtra("userID", userID);
+                intent.putExtra("decision", decision);
                 intent.putExtra("vehicleID", "brak");
                 startActivity(intent);
 
@@ -108,12 +111,12 @@ public class VehicleListActivity extends AppCompatActivity {
                 decision = "modify";
                 //find selected item
                 if(selectedItem != "0"){
-                    preURL = updateURL + selectedItem;
+                    preURL = updateURL + regNum;
                     //Toast.makeText(VehicleListActivity.this, "URL: " + preURL, Toast.LENGTH_LONG).show();
                     //TODO /drugi put extra z id pojazdu
                     Intent intent = new Intent(VehicleListActivity.this, CarSettingsActivity.class);
                     intent.putExtra("userID", userID);
-                    intent.putExtra("vehicleID", vehicleID);
+                    intent.putExtra("vehicleID", regNum);
                     intent.putExtra("decision", decision);
                     startActivity(intent);
                 }
@@ -129,9 +132,9 @@ public class VehicleListActivity extends AppCompatActivity {
                 //find selected item
                 if(selectedItem !="0"){
                     preURL = deleteURL + selectedItem;
-
+                        //preURL = deleteURL;
                     jsonParseDelete(VehicleListActivity.this, selectedItem);
-                    //jsonParseGet(VehicleListActivity.this);
+
                 }
                 else
                     Toast.makeText(VehicleListActivity.this, "Wybierz pojazd", Toast.LENGTH_LONG).show();
@@ -223,7 +226,9 @@ public class VehicleListActivity extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
                         Log.e("Rest Response", response.toString());
                             Toast.makeText(VehicleListActivity.this, "Usunięto pojazd", Toast.LENGTH_LONG).show();
-                            jsonParseGet(VehicleListActivity.this);
+                           // jsonParseGet(VehicleListActivity.this);
+                        preURL = baseURL + userID;
+                        jsonParseGet(VehicleListActivity.this);
 
                         }
 

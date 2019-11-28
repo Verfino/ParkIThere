@@ -56,7 +56,7 @@
     <string name="search_parking">Znajdź\nparking</string>
     <string name="manage_cars">Zarządzaj\npojazdami</string>
     <string name="activate_premium">Aktywuj\npremium</string>
-
+    <string name="navigate">Nawiguj</string>
 
     <string name="title_activity_login">Logowanie</string>
     <string name="prompt_email">Email</string>
@@ -70,6 +70,6 @@
     <string name="passNotEqualPass2">Wprowadzone hasła nie są identyczne</string>
     <string name="userExists">Użytkownik o podanym adresie e-mail już istnieje</string>
     <string name="login_failed">"Logowanie nieudane"</string>
-
+    <string name="error">Wystąpił błąd. Skontaktuj sie z administratorem</string>
 
 </resources>

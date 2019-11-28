@@ -31,7 +31,7 @@ public class CarSettingsActivity extends AppCompatActivity {
     String vehicleID = null;
     String registerNumber;
 
-    String updateURL = "http://192.168.1.14:45455/api/ParkingLot/AddVehicle/UpVehicle";
+    String updateURL = "http://192.168.1.14:45455/api/ParkingLot/UpVehicle";
     String addURL = "http://192.168.1.14:45455/api/ParkingLot/AddVehicle";
     String getURL = "http://192.168.1.14:45455/api/ParkingLot/GetVehiclesByRegNum?regNum=";
     String preURL = "";
@@ -61,7 +61,7 @@ public class CarSettingsActivity extends AppCompatActivity {
         userID = intent.getStringExtra("userID");
         vehicleID = intent.getStringExtra("vehicleID");
         exists = intent.getStringExtra("decision");
-        //TODO zrobic zmienną która ocenia czy tworzymy/modyfikujemy pojazd. Dla modyfikacji pobiera dane tego pojazdu i wstawia je w textboxy
+
 
         accept = findViewById(R.id.button_accept);
         cancel = findViewById(R.id.button_back);
@@ -71,7 +71,8 @@ public class CarSettingsActivity extends AppCompatActivity {
         regNum = findViewById(R.id.vehicle_number);
         fuel = findViewById(R.id.vehicle_fuel);
 
-        if(exists == "modify"){
+        if(exists.equals("modify")){
+            URL = getURL + vehicleID;
             getVehicleParse();
         }
 
@@ -79,11 +80,10 @@ public class CarSettingsActivity extends AppCompatActivity {
         accept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (vehicleID != "brak"){
+                if (exists.equals("modify")){
                     modifyParse();
                 }
                 else{
-
                     addParse();
                 }
 
@@ -106,6 +106,7 @@ public class CarSettingsActivity extends AppCompatActivity {
     private final void modifyParse(){
         JSONObject params = new JSONObject();
         try {
+            params.put("vehicleID", vehicleID);
             params.put("brand", brand.getText().toString());
             params.put("model", model.getText().toString());
             params.put("registrationNumber", regNum.getText().toString());
@@ -125,12 +126,15 @@ public class CarSettingsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e("Rest Response", response.toString());
+                        Toast.makeText(CarSettingsActivity.this, "Edytowano pojazd", Toast.LENGTH_LONG).show();
+                        openCarList();
                     }
                 },
                 new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("Rest Response error", error.toString());
+                        Toast.makeText(CarSettingsActivity.this, R.string.error, Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -197,10 +201,11 @@ public class CarSettingsActivity extends AppCompatActivity {
                         Log.e("Rest Response", response.toString());
                         try {
                             JSONObject vehicle = response.getJSONObject(0);
-                            brand.setText(vehicle.getString("password"));
+                            brand.setText(vehicle.getString("brand"));
                             model.setText(vehicle.getString("model"));
                             regNum.setText(vehicle.getString("registrationNumber"));
                             fuel.setText(vehicle.getString("fuelType"));
+                            vehicleID = vehicle.getString("vehicleID");
                             //Toast.makeText(loginActivity.this, "json " + api_password,
                             // Toast.LENGTH_LONG).show();
 
@@ -226,6 +231,13 @@ public class CarSettingsActivity extends AppCompatActivity {
 
         requestQueue.add(arrayRequest);
 
+
+    }
+
+    private final void openCarList(){
+        Intent intent = new Intent (CarSettingsActivity.this, VehicleListActivity.class);
+        intent.putExtra("userID", userID);
+        startActivity(intent);
 
     }
 }
