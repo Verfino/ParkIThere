@@ -46,6 +46,8 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
 
     Button parkIT;
     Button navigate;
+    String userID;
+    String userType;
 
     String latitude;
     String longitude;
@@ -59,6 +61,8 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         parkingID = intent.getStringExtra("parkingID");
+        userID = intent.getStringExtra("userID");
+        userType = intent.getStringExtra("userType");
 
         parkIT = findViewById(R.id.button_parkIT);
         pName = findViewById(R.id.parking_name);
@@ -67,6 +71,10 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
         navigate = findViewById(R.id.button_navigate);
         //pContact.setMovementMethod(LinkMovementMethod.getInstance());
 
+        if(userType.equals("0")) {
+            parkIT.setEnabled(false);
+            parkIT.setVisibility(View.INVISIBLE);
+        }
         mainURL = baseURL + parkingID;
         JSONparse();
 
@@ -74,7 +82,11 @@ public class ParkingPositionViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ParkingPositionViewActivity.this, ParkingLotViewActivity.class);
+                intent.putExtra("pName", pName.getText());
+                intent.putExtra("userID", userID);
+                intent.putExtra("parkingID", parkingID);
                 startActivity(intent);
+
                 //Toast.makeText(ParkingPositionViewActivity.this, "Parkuj !",Toast.LENGTH_LONG).show();
             }
         });

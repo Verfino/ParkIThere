@@ -71,5 +71,9 @@
     <string name="userExists">Użytkownik o podanym adresie e-mail już istnieje</string>
     <string name="login_failed">"Logowanie nieudane"</string>
     <string name="error">Wystąpił błąd. Skontaktuj sie z administratorem</string>
+    <string name="reservation">Potwierdź rezerwację\nmiejsca</string>
+    <string name="TAGstatus">status</string>
+    <string name="TAGdisabled">disabled</string>
+    <string name="your_reservation">Twoja rezerwacja</string>
 
 </resources>

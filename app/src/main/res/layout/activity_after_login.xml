@@ -109,7 +109,6 @@
     </TextView>
 
 
-
     <ImageView
         android:id="@+id/premium_icon"
         android:layout_width="150dp"

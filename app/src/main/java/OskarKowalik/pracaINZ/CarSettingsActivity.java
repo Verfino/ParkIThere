@@ -109,7 +109,7 @@ public class CarSettingsActivity extends AppCompatActivity {
             params.put("vehicleID", vehicleID);
             params.put("brand", brand.getText().toString());
             params.put("model", model.getText().toString());
-            params.put("registrationNumber", regNum.getText().toString());
+            params.put("registrationNumber", regNum.getText().toString().toUpperCase());
             params.put("fuelType", fuel.getText().toString());
             params.put("vehicleUserID", userID);
 
@@ -154,7 +154,7 @@ public class CarSettingsActivity extends AppCompatActivity {
         try {
             params.put("brand", brand.getText().toString());
             params.put("model", model.getText().toString());
-            params.put("registrationNumber", regNum.getText().toString());
+            params.put("registrationNumber", regNum.getText().toString().toUpperCase());
             params.put("fuelType", fuel.getText().toString());
             params.put("vehicleUserID", userID);
 
@@ -171,6 +171,7 @@ public class CarSettingsActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.e("Rest Response", response.toString());
+                        openCarList();
                     }
                 },
                 new Response.ErrorListener(){

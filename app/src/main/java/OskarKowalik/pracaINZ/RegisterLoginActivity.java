@@ -69,7 +69,11 @@ public class RegisterLoginActivity extends AppCompatActivity {
                 else {
                     //Toast.makeText(RegisterLoginActivity.this, "Hasła są równe",  Toast.LENGTH_LONG).show();
                     URL = ifExistsURL + email.getText().toString();
-                    jsonParse();
+                    if(isEmailValid(email.getText()) && checkPassLength())
+                        jsonParse();
+                    else
+                        Toast.makeText(RegisterLoginActivity.this, "Wprowadzony email lub hasło są nieprawidłowe",  Toast.LENGTH_LONG).show();
+
                 }
             }
         });
@@ -83,6 +87,20 @@ public class RegisterLoginActivity extends AppCompatActivity {
         });
 
     }
+
+    private boolean isEmailValid(CharSequence email) {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+
+    };
+
+    private boolean checkPassLength(){
+        if (pass1.length() < 8){
+            Toast.makeText(RegisterLoginActivity.this, "Hasło jest za krótkie",  Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else
+            return true;
+    };
 
     private void checkUserExists() {
         if(!exists)

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopUpActivity"
+    style="@style/normalButton"
+    android:background="@drawable/parkingbackground">
+
+    <TextView
+        android:id="@+id/reservationText"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        style="@style/normalButton"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+
+        android:text="@string/reservation"
+        >
+
+
+    </TextView>
+
+    <Button
+        android:id="@+id/accept_reservation"
+        android:layout_width="120dp"
+        style="@style/normalButton"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/reservationText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/form_accept"
+        >
+    </Button>
+
+    <Button
+        android:id="@+id/cancel_reservation"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        style="@style/normalButton"
+        app:layout_constraintLeft_toRightOf="@id/accept_reservation"
+        app:layout_constraintTop_toTopOf="@id/accept_reservation"
+        android:layout_marginLeft="10dp"
+        android:text="@string/menu_spots"
+        >
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

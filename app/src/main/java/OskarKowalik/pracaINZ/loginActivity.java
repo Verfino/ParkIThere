@@ -80,6 +80,7 @@ public class loginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AfterLoginActivity.class);
         intent.putExtra("userID", userID);
         intent.putExtra("userType", userType);
+        intent.putExtra("reservation", "no");
         startActivity(intent);
     }
 

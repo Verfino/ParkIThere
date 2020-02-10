@@ -15,6 +15,31 @@
 
     </style>
 
+    <style name="parkingButton" >
+        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:background">@drawable/parking_space_border</item>
+        <item name="android:textSize">20dp</item>
+
+    </style>
+    <style name="parkingSpaceReserved" >
+    <item name="android:textColor">@color/colorFont</item>
+    <item name="android:background">@drawable/parking_space_border</item>
+    <item name="android:textSize">20dp</item>
+
+</style>
+    <style name="parkingSpaceDisabled" >
+        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:background">@drawable/parking_space_border</item>
+        <item name="android:textSize">20dp</item>
+
+    </style>
+    <style name="parkingSpaceOccupied" >
+        <item name="android:textColor">@color/colorFont</item>
+        <item name="android:background">@drawable/parking_space_border</item>
+        <item name="android:textSize">20dp</item>
+
+    </style>
+
     <style name="invertedButton" >
     <item name="android:textColor">@color/colorButtonBackground</item>
     <item name="android:background">@drawable/inverted_button</item>
@@ -42,4 +67,12 @@
         <item name="android:textSize">56dp</item>
         <item name="android:textAlignment">center</item>
     </style>
+
+
+
+    <style name="AppTheme.CustomTheme" >
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
 </resources>

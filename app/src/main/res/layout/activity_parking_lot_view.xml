@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginActivity"
-    android:background="@drawable/alert_bump">
+    android:background="@drawable/parkingbackground">
     <!--
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -31,6 +31,7 @@
     </TextView>
 
     <TableLayout
+        android:id="@+id/tableSpace"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -46,12 +47,17 @@
 
             <Button
                 android:id="@+id/buttonView1"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                style="@style/parkingButton"
+
+                />
             <Button
                 android:id="@+id/buttonView2"
-                android:layout_width="170dp"
+                android:layout_width="220dp"
+                android:visibility="invisible"
                 android:enabled="false"/>
             <Button android:id="@+id/buttonView3"
+                style="@style/parkingButton"
                 android:layout_marginEnd="5dp"/>
 
 
@@ -59,26 +65,188 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
             <Button
                 android:id="@+id/buttonView4"
-                android:layout_marginStart="5dp"/>
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"
+                />
             <Button
                 android:id="@+id/buttonView5"
                 android:layout_width="170dp"
+                android:visibility="invisible"
                 android:enabled="false"/>
             <Button android:id="@+id/buttonView6"
+                style="@style/parkingButton"
                 android:layout_marginEnd="5dp"/>
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView7"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView8"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView9"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView10"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView11"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView12"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView13"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView14"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView15"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView16"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView17"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView18"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView19"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView20"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView21"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp">
+            <Button
+                android:id="@+id/buttonView22"
+                style="@style/parkingButton"
+                android:layout_marginStart="5dp"/>
+            <Button
+                android:id="@+id/buttonView23"
+                android:layout_width="170dp"
+                android:visibility="invisible"
+                android:enabled="false"/>
+            <Button android:id="@+id/buttonView24"
+                style="@style/parkingButton"
+                android:layout_marginEnd="5dp"/>
+        </TableRow>        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp">
+        <Button
+            android:id="@+id/buttonView25"
+            style="@style/parkingButton"
+            android:layout_marginStart="5dp"/>
+        <Button
+            android:id="@+id/buttonView26"
+            android:layout_width="170dp"
+            android:visibility="invisible"
+            android:enabled="false"/>
+        <Button android:id="@+id/buttonView27"
+            style="@style/parkingButton"
+            android:layout_marginEnd="5dp"/>
+    </TableRow>        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp">
+        <Button
+            android:id="@+id/buttonView28"
+            style="@style/parkingButton"
+            android:layout_marginStart="5dp"/>
+        <Button
+            android:id="@+id/buttonView29"
+            android:layout_width="170dp"
+            android:visibility="invisible"
+            android:enabled="false"/>
+        <Button android:id="@+id/buttonView30"
+            style="@style/parkingButton"
+            android:layout_marginEnd="5dp"/>
+    </TableRow>        <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp">
+        <Button
+            android:id="@+id/buttonView31"
+            style="@style/parkingButton"
+            android:layout_marginStart="5dp"/>
+        <Button
+            android:id="@+id/buttonView32"
+            android:layout_width="170dp"
+            android:visibility="invisible"
+            android:enabled="false"/>
+        <Button android:id="@+id/buttonView33"
+            style="@style/parkingButton"
+            android:layout_marginEnd="5dp"/>
+    </TableRow>
+
     </TableLayout>
+    <Button
+        style="@style/normalButton"
+        android:id="@+id/buttonCancelReservation"
+        android:enabled="true"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Odwołaj rezerwacje"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/tableSpace"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="@id/parking_view_name"
+        />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

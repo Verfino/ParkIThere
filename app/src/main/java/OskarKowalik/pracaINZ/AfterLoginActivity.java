@@ -30,6 +30,9 @@ public class AfterLoginActivity extends AppCompatActivity {
     public String userID;
     String userType;
 
+    String reservationParking;
+    String reservation;
+
     String URL = "http://192.168.1.14:45455/api/ParkingLot/GetUsersByMail?mail=";
     String updateURL = "http://192.168.1.14:45455/api/ParkingLot/UpUserType";
 
@@ -45,6 +48,7 @@ public class AfterLoginActivity extends AppCompatActivity {
         Intent intent = getIntent();
         userID = intent.getStringExtra("userID");
         userType = intent.getStringExtra("userType");
+
 
         textViewSearch = (TextView) findViewById(R.id.search_parking);
         textViewCars = (TextView) findViewById(R.id.manage_cars);
@@ -77,6 +81,7 @@ public class AfterLoginActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, ParkingListActivity.class);
         intent.putExtra("userID", userID);
+        intent.putExtra("userType", userType);
         startActivity(intent);
 
     }

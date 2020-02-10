@@ -77,6 +77,7 @@ public class ParkingListActivity extends AppCompatActivity {
     boolean clicked = false;
     boolean toSort = false;
     Location myLocation;
+    String userType;
 
 
     @Override
@@ -89,6 +90,7 @@ public class ParkingListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         userID = intent.getStringExtra("userID");
+        userType = intent.getStringExtra("userType");
 
 
         filterByCity = findViewById(R.id.filter_by_city);
@@ -225,9 +227,12 @@ public class ParkingListActivity extends AppCompatActivity {
         return String.format("%.2f", myLocation.distanceTo(loc2)/1000);
     }
 
-    private final void openActivity(){
+    private final void openActivity(int position){
         Intent intent = new Intent(ParkingListActivity.this, ParkingPositionViewActivity.class);
         intent.putExtra("parkingID", parkingID);
+        intent.putExtra("pName", parkings.get(position).get("First"));
+        intent.putExtra("userID", userID);
+        intent.putExtra("userType", userType);
         startActivity(intent);
 
     }
@@ -239,7 +244,7 @@ public class ParkingListActivity extends AppCompatActivity {
                 //selectedItem = position;
                 selectedItem = parkings.get(position).get("ID");
                 parkingID = selectedItem;
-                openActivity();
+                openActivity(position);
                 //Toast.makeText(VehicleListActivity.this, "Position: " + position + " id :" + selectedItem, Toast.LENGTH_LONG).show();
             }
         });
